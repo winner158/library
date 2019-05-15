@@ -1,0 +1,54 @@
+<!-- <form bindsubmit="savePersonInfo"> -->
+<form bindsubmit="formSubmit">
+  <view class="weapp-name"></view>
+  <view class="form-list">
+    <view class="form-item">
+      <view class="form-item-hd">书名</view>
+      <view class="form-item-bd">
+        <input type="text" name="bookName" value="" placeholder="请输入书名" maxlength="20" />
+      </view>
+    </view>
+  </view>
+  <!-- <view class="form-item">
+      <view class="form-item-hd">昵称</view>
+      <view class="form-item-bd">
+        <input type="text" name="nickName" value="{{nickName}}" placeholder="请输入昵称" maxlength="8" />
+      </view>
+    </view> -->
+  <view class="form-list">
+    <view class="form-item">
+      <view class="form-item-hd">类别</view>
+      <view class="form-item-bd">
+        <picker mode="selector" value="{{genderIndex}}" range="{{genderArray}}" bindchange="changeGender">
+          <block wx:if="{{gender == ''}}">
+            <view class="input input-placeholder">请选择类别</view>
+            <input type="text" name="bookCategoryId" value="" class="hidden" maxlength="1" />
+          </block>
+          <block wx:else>
+            <view class="input">{{genderArray[genderIndex]}}</view>
+            <input type="text" name="bookCategoryId" value="{{genderIndex}}" class="hidden" maxlength="1" />
+          </block>
+        </picker>
+      </view>
+    </view>
+  </view>
+  <view class="form-list">
+    <view class="form-item">
+      <view class="form-item-hd">阅读时长</view>
+      <view class="form-item-bd">
+        <input type="text" name="readPeriod" value="" placeholder="XX天" maxlength="4" />
+      </view>
+    </view>
+  </view>
+  <view class="form-list">
+    <view class="form-item">
+      <view class="form-item-hd">书评</view>
+      <view class="form-item-bd">
+        <input type="text" name="bookReview" value="" placeholder="书评" maxlength="100" />
+      </view>
+    </view>
+  </view>
+  <view class="form-list_btn">
+    <button formType="submit" class="edit-btn">保 存</button>
+  </view>
+</form>

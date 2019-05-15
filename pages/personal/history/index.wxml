@@ -1,0 +1,31 @@
+<wxs module="subutil" >
+var sub = function (val) {
+  if (val.length == 0 || val == undefined) {
+    return;
+  }
+  if (val.length > 10) {
+    return val.substring(0, 10);
+  } else {
+    return val;
+  }
+}
+module.exports.sub = sub;
+</wxs>
+<view class="navigator" url="/pages/detail/index?id={{item.id}}&videoName={{item.videoName}}&videoUrl={{item.videoUrl}}&videoPoster={{item.videoPoster}}" wx:for="{{booklist}}" wx:key="list">
+  <view class="news_content" id="1" catchtap="detail">
+    <view class="news_content_left">
+      <view class="news_content_left_top">
+        <view class="text_top">{{item.bookReview}}</view>
+      </view>
+      <view class="news_content_left_but">
+        <image src="/images/pic.jpg" class="pic"></image>
+        <text>作者：自己</text>
+        <text style="margin-left:30px;">{{subutil.sub(item.uploadDate)}}</text>
+      </view>
+    </view>
+    <view class="news_content_right">
+      <image src="/images/flash.jpg"></image>
+    </view>
+  </view>
+  
+</view>

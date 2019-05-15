@@ -1,0 +1,83 @@
+page{
+    background: #ebebeb;
+}
+#header{
+    width:100%;
+    height:200px;
+    background: #3080c0;
+    color:#ffffff;
+}
+#header .content{
+    padding-top:60px;
+    text-align: center;
+}
+.form-list_btn {
+  margin-top: 50rpx;
+}
+
+.edit-btn {
+    width: 600rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 80rpx;
+    background-color: #3080c0;
+    border-radius: 80rpx;
+    color: #fff;
+}
+#header .user-header-avatar{
+    /* width:100px;
+    height:100px;
+    border-radius: 100px; */
+    margin: 0 auto;
+    display: block;
+    width: 130rpx;
+    height: 130rpx;
+    border-radius: 130px;
+    /* border: 5rpx solid #fff; */
+    overflow: hidden;
+}
+#header .content .nickname{
+    padding-top:10px;
+}
+#header .content .orther{
+    padding-top:10px;
+    font-size:15px;
+}
+
+#section .icon{
+    width:23px;
+    height:23px;
+}
+#section .menus_title{
+    display: block;
+}
+#section .menus_title text{
+    font-size:13px;
+}
+#menus{
+    background: #ffffff;
+    margin-top:10px;
+    height:auto;
+    width:100%;
+}
+#menus .content{
+    height:45px;
+    border-bottom: 0.5px solid #ebebeb; 
+}
+#menus .content .view{
+    float: left;
+
+}
+#menus .content .view text{
+    font-size:15px;
+    line-height:45px;
+    padding-left:20px;
+}
+#menus .content .right{
+    height: 45px;
+    float: right;
+    margin-right:10px;
+    line-height: 45px;
+}

@@ -1,0 +1,67 @@
+<view id="header">
+  <view class="content">
+    <!-- <image src="{{userInfo.avatarUrl}}"></image> -->
+    <view class="user-header-avatar">
+      <open-data class="" lang="zh_CN" type="userAvatarUrl"></open-data>
+    </view>
+    <view class="nickname">
+      <open-data class="" lang="zh_CN" type="userNickName"></open-data>
+    </view>
+    <view class="orther">
+      <open-data class="" lang="zh_CN" type="userCountry"></open-data>-
+      <open-data class="" lang="zh_CN" type="userProvince"></open-data>
+    </view>
+  </view>
+</view>
+<view id="section">
+  <view class="flex-wrp" style="flex-direction:row;">
+    <view class="flex-item" bindtap="sortBookStore">
+      <view>
+        <image src="/images/collection.png" class="icon"></image>
+      </view>
+      <view class="menus_title">
+        <text>书架分类</text>
+      </view>
+    </view>
+    <view class="flex-item two_side" bindtap="uploadBook">
+      <view>
+       
+        <image src="/images/upload.png" class="icon"></image>
+      </view>
+      <view class="menus_title">
+       <text>上传图书</text>
+      </view>
+    </view>
+    <view class="flex-item" bindtap="readThink">
+      <view>
+        <image src="/images/heart.png" class="icon"></image>
+      </view>
+      <view class="menus_title">
+        <text>读书心得</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view id="menus">
+  <view class="content" bindtap="aboutUs">
+    <view class="view">
+      <text>关于我们</text>
+    </view>
+    <view class="right">
+      <image src="/images/rightjian.png" style="width:14px;height:14px"></image>
+    </view>
+  </view>
+  
+ 
+  <!-- <view class="content">
+    <view class="view">
+      <text>阅读历史</text>
+    </view>
+    <view class="right">
+      <image src="/images/rightjian.png" style="width:14px;height:14px"></image>
+    </view>
+  </view> -->
+</view>
+ <view class="form-list_btn" hidden="{{hiddenName}}">
+    <button formType="submit" open-type='getUserInfo' bindgetuserinfo='doLogin' class="edit-btn">微信登录</button>
+  </view>

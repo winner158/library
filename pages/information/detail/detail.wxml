@@ -1,0 +1,42 @@
+<wxs module="subutil" >
+var sub = function (val) {
+  if (val.length == 0 || val == undefined) {
+    return;
+  }
+  if (val.length > 10) {
+    return val.substring(0, 10);
+  } else {
+    return val;
+  }
+}
+module.exports.sub = sub;
+</wxs>
+<view id="main">
+  <view class="title">
+    {{bookcontent.bookName}}
+  </view>
+  <view class="numbers">
+    <text>上传时间：{{subutil.sub(bookcontent.uploadDate)}}</text>
+    <text>用户：{{bookcontent.uploadUserNickname}}</text>
+  </view>
+  <view class="content">
+    <text>
+          {{bookcontent.bookReview}}
+          <br/>
+          </text>
+    <!-- <image src="http://img3.cache.netease.com/photo/0005/2016-09-29/C25HM83J0B4C0005.jpg" style="width:100%;"></image> -->
+
+  </view>
+  <view class="form-list_btn">
+    <button bindtap='shareActon'  class="edit-btn">{{isShared?'已分享':'分 享'}}</button>
+   
+  </view>
+</view>
+<view id="comments">
+<form bindsubmit="formSubmit">
+  <view class="input" >
+    <input class="text" type="text" name="text" placeholder="写点什么吧" />
+    <button type="default" class="submit" form-type="submit">发表书评</button>
+  </view>
+  </form>
+</view>

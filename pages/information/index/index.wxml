@@ -1,0 +1,81 @@
+<!-- <import src="/template/information/loads.wxml" />
+<template is="loads" data="{{hidden:hid}}"/> -->
+
+<!-- <import src="/template/information/index/figure.wxml"/>
+<template is="figure" data="{{display:dis}}"/> -->
+<wxs module="subutil" >
+var sub = function (val) {
+  if (val.length == 0 || val == undefined) {
+    return;
+  }
+  if (val.length > 10) {
+    return val.substring(0, 10);
+  } else {
+    return val;
+  }
+}
+module.exports.sub = sub;
+</wxs>
+
+<view class="menu">
+    <scroll-view class="scroll-view_H" scroll-x="{{true}}" >
+        <view id="{{menu_id}}" bindtap="click_menu" wx:for="{{menu}}" wx:for-index="menu_id" wx:for-item="item" wx:key=""  class="nav_font">
+            <block wx:if="{{menu_id == menuStatic}}"><text class="nav_hover">{{item}}</text></block>
+            <block wx:else>{{item}}</block>
+        </view> 
+    </scroll-view>
+    <!-- <view class="add_menu">
+        <image src="/images/swdw.png"></image>
+    </view> -->
+</view>
+
+<view class="swiper">
+    <progress percent="100" stroke-width="2" active color="#3080c0"/>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <!-- <block wx:for="{{imgUrls}}"> -->
+        <block>
+            <swiper-item>
+                <!-- <image src="{{item}}" class="slide-image" height="150"/> -->
+                <image src="/images/flash.jpg" class="slide-image" height="150"/>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<!-- <view class="news_content" id="1" catchtap="detail">
+    <view class="news_content_left">
+      <view class="news_content_left_top">
+          <view class="text_top">岳云鹏微博发声支持师父郭德纲：我没教过学费</view>
+      </view>
+      <view class="news_content_left_but">
+          <image src="/images/pic.jpg" class="pic"></image>
+          <text>海外网</text>
+          <text style="margin-left:10px;">281条评论</text>
+          <text style="margin-left:10px;">10分钟前</text>
+      </view>
+    </view>
+    <view class="news_content_right">
+        <image src="/images/flash.jpg"></image>
+    </view>
+</view> -->
+
+<view class="news_content" wx:for="{{booklist}}" wx:for-item="booklistItem" wx:key="booklistItem" id="{{booklistItem.id}}" bindtap="detail">
+    <view class="news_content_right news_content-left">
+        <image src="/images/flash.jpg"></image>
+    </view>
+    <view class="news_content_left news_content-right">
+      <view class="news_content_left_top">
+          <view class="text_top">{{booklistItem.bookName}}</view>
+      </view>
+       <!-- <view class="news_content_left_top">
+          <view class="text_top">书名1</view>
+      </view> -->
+      <view class="news_content_left_but">
+          <image src="/images/pic.jpg" class="pic"></image>
+          <text>阅读时长：{{booklistItem.readPeriod}}天</text>
+          <!-- <text style="margin-left:10px;">281条评论</text> -->
+          <text style="margin-left:30px;">{{subutil.sub(booklistItem.uploadDate)}}</text>
+      </view>
+    </view>
+    
+</view>
